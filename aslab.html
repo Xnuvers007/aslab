@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aslab Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- HTML Meta Tags -->
+    <meta name="description" content="tempat untuk membuat penjadwalan pada asisten laboratorium">
+    <meta name="language" content="id">
+    <meta name="author" content="Indra Dwi A | Xnuvers007">
+    <meta name="keywords" content="asisten,,asistenlab">
+    <meta name="robots" content="index, follow">
+    <meta charset="utf-8">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Aslab Generator">
+    <meta itemprop="description" content="tempat untuk membuat penjadwalan pada asisten laboratorium">
+    <meta itemprop="image" content="https://i.ibb.co.com/vQfpV23/image.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://bioskop-six.vercel.app/aslab">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aslab Generator" />
+    <meta property="og:description" content="tempat untuk membuat penjadwalan pada asisten laboratorium" />
+    <meta property="og:image" content="https://i.ibb.co.com/vQfpV23/image.png" />
+    <meta property="og:site_name" content="Aslab Generator" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aslab Generator" />
+    <meta name="twitter:description" content="tempat untuk membuat penjadwalan pada asisten laboratorium" />
+    <meta name="twitter:image" content="https://i.ibb.co.com/vQfpV23/image.png" />
+
+    <!-- Meta Tags Generated via https://github.com/Xnuvers007/Meta-Generator -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff6f61, #ff9a8b);
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        label {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .form-control, .form-select {
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+        .btn-primary:hover {
+            background-color: #45a049;
+            border-color: #45a049;
+        }
+        .btn-secondary {
+            background-color: #ff0000;
+            border-color: #f1f1f1;
+            color: #333;
+        }
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
+            border-color: #dcdcdc;
+        }
+        .btn-info {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+        .btn-info:hover {
+            background-color: #138496;
+            border-color: #117a8b;
+        }
+        .btn-primary, .btn-secondary, .btn-info {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+        .alert {
+            background-color: #28a745;
+            color: white;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .output-container {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .output-container h4 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .output-container p {
+            font-size: 1.1rem;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .output-container hr {
+            border-color: #ddd;
+        }
+        .social-icons {
+        margin: 20px 0;
+    }
+    
+    /* .social-icons a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin: 0 10px;
+        text-align: center;
+        line-height: 35px;
+        color: #000;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    } */
+
+    .social-icons a {
+            width: 35px;
+            height: 35px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            margin: 0 10px;
+            text-align: center;
+            line-height: 35px;
+            color: #000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+    
+    .social-icons a:hover {
+        transform: translateY(-3px);
+    }
+    
+    .social-icons .fa-instagram:hover {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        color: white;
+    }
+    
+    .social-icons .fa-youtube:hover {
+        background-color: #ffffff;
+        color: rgb(255, 0, 0);
+    }
+
+    .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .dark-theme {
+            background: linear-gradient(135deg, #333, #222);
+            color: #eee;
+        }
+        .dark-theme .container {
+            background-color: #444;
+            color: #ddd;
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+        .dark-theme .output-container {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .btn-acumalaka {
+            background-color: #00ffea;
+            border-color: #f1f1f1;
+            color: #333;
+        }
+        .btn-acumalaka:hover {
+            background-color: #00ffea;
+            border-color: #f1f1f1;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="theme-toggle">
+        <button id="themeSwitch" class="btn btn-acumalaka">Theme ?</button>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Aslab Generator</h1>
+
+        <form id="labForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nama:</label>
+                <input type="text" class="form-control" id="name" placeholder="Masukkan nama">
+            </div>
+            <div class="mb-3">
+                <label for="day" class="form-label">Hari:</label>
+                <select class="form-select" id="day">
+                    <option value="Senin">Senin</option>
+                    <option value="Selasa">Selasa</option>
+                    <option value="Rabu">Rabu</option>
+                    <option value="Kamis">Kamis</option>
+                    <option value="Jum'at">Jum'at</option>
+                    <option value="Sabtu">Sabtu</option>
+                    <option value="Minggu">Minggu</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">Jam:</label>
+                <input type="text" class="form-control" id="time" placeholder="Masukkan jam (misal: 14.40 - 16.20)">
+            </div>
+            <div class="mb-3">
+                <label for="room" class="form-label">Ruang:</label>
+                <select class="form-select" id="room">
+                    <option value="782">782</option>
+                    <option value="773">773</option>
+                    <option value="775">775</option>
+                    <option value="776">776</option>
+                    <option value="611">611</option>
+                    <option value="612">612</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="subject" class="form-label">Mata Kuliah:</label>
+                <input type="text" class="form-control" id="subject" placeholder="Masukkan mata kuliah">
+            </div>
+            <div class="mb-3">
+                <label for="lecturer" class="form-label">Dosen: <strong>(Disarankan menggunakan bapak/ibu jika untuk dosen)</strong></label>
+                <input type="text" class="form-control" id="lecturer" placeholder="Masukkan dosen">
+            </div>
+            <div class="mb-3">
+                <label for="class" class="form-label">Kelas:</label>
+                <input type="text" class="form-control" id="class" placeholder="Masukkan kelas">
+            </div>
+            <div class="mb-3">
+                <label for="selamat" class="form-label">Selamat:</label>
+                <select class="form-select" id="selamat">
+                    <option value="Selamat Pagi">Selamat Pagi</option>
+                    <option value="Selamat Siang">Selamat Siang</option>
+                    <option value="Selamat Sore">Selamat Sore</option>
+                    <option value="Selamat Malam">Selamat Malam</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="periode" class="form-label">Periode:</label>
+                <select class="form-select" id="periode">
+                    <option value="Periode ke-1(pertemuan 2 - sebelum UTS)">Ke - 1</option>
+                    <option value="Periode ke-2(setelah UTS - sebelum UAS)">ke - 2</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="pertemuan" class="form-label">Pertemuan ke - :</label>
+                <select class="form-select" id="pertemuan">
+                    <option value="pertemuan ke - 2 (2 sks dan 3 sks)">2 (2 dan 3 SKS)</option>
+                    <option value="pertemuan ke - 8 (untuk 2 sks)">8 (2 SKS)</option>
+                    <option value="pertemuan ke - 11 (untuk 3 sks)">11 (3 SKS)</option>
+                </select>
+            </div>
+            <hr>
+
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-primary" onclick="generateStudentAnnouncement()">Buat untuk Mahasiswa </button>
+                <button type="button" class="btn btn-primary" onclick="generateLecturerAnnouncement()">Buat untuk Dosen </button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+
+        <div id="output" class="output-container mt-4" style="display: none;">
+            <h4>Pengumuman Lab:</h4>
+            <div class="alert alert-success">
+                <p id="announcementText"></p>
+            </div>
+            <button class="btn btn-info" id="copyBtn">Copy to Clipboard <i class="bi bi-clipboard"></i></button>
+        </div>
+    </div>
+
+    <script>
+
+        // dilarang klik kanan
+        document.addEventListener('contextmenu', function(e) {
+            swal("Gagal!", "Klik kanan tidak diizinkan!", "error");
+        });
+
+        document.getElementById("labForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            generateStudentAnnouncement();
+            generateLecturerAnnouncement();
+        });
+
+        const themeSwitch = document.getElementById('themeSwitch');
+        themeSwitch.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            themeSwitch.textContent = document.body.classList.contains('dark-theme') ? 'Light Theme' : 'Dark Theme';
+        });
+
+        // document.getElementById("labForm").addEventListener("submit", function(event) {
+        //     event.preventDefault();
+        function generateStudentAnnouncement() {
+
+            const name = document.getElementById("name").value;
+            const day = document.getElementById("day").value;
+            const time = document.getElementById("time").value;
+            const room = document.getElementById("room").value;
+            const subject = document.getElementById("subject").value;
+            const lecturer = document.getElementById("lecturer").value;
+            const className = document.getElementById("class").value;
+
+
+            if (name === "" || day === "" || time === "" || room === "" || subject === "" || lecturer === "" || className === "") {
+                swal("Gagal!", "Mohon lengkapi semua kolom!", "error");
+                return;
+            }
+
+            // if (time.split(" - ").length !== 2) {
+            //     swal("Gagal!", "Format jam tidak valid! Pastikan formatnya adalah 'jam mulai - jam selesai'!", "error");
+            //     return;
+            // }
+
+            let roomDetails = "";
+            if (room === "611" || room === "612") {
+                roomDetails = `${room} (Lewat pintu masuk, LT. 6 gedung A)`;
+            } else if (room === "773" || room === "775" || room === "776" || room === "782") {
+                roomDetails = `${room} (Lewat LT. 8 gedung C parkiran)`;
+            }
+
+            const announcement = `
+                Halo semua! 📢<br><br>
+                Perkenalkan, saya ${name} dari Asisten Laboratorium. Kami ingin memberitahu kalian bahwa besok akan ada jadwal lab yang perlu diikuti. Berikut detailnya:<br><br>
+                <ul>
+                    <li><strong>*📅 Hari:*</strong> ${day}</li>
+                    <li><strong>*🕒 Jam:*</strong> ${time}</li>
+                    <li><strong>*🏢 Ruang:*</strong> ${roomDetails}</li>
+                    <li><strong>*📚 Mata Kuliah:*</strong> ${subject}</li>
+                    <li><strong>*👨‍🏫 Dosen:*</strong> ${lecturer}</li>
+                    <li><strong>*🧑‍🎓 Kelas:*</strong> ${className}</li>
+                </ul>
+                <hr>
+                <p><strong>*Catatan penting:*</strong> Wajib memakai almamater dan membawa laptop karena di lab komputer hanya disediakan terminal saja.</p>
+                <br />
+                *Pastikan untuk hadir tepat waktu* dan mempersiapkan diri dengan baik. Terima kasih!
+            `;
+
+            displayAnnouncement(announcement);
+
+            // document.getElementById("announcementText").innerHTML = announcement;
+            // document.getElementById("output").style.display = "block";
+        // });
+        }
+
+        function generateLecturerAnnouncement() {
+            const name = document.getElementById("name").value;
+            const lecturer = document.getElementById("lecturer").value;
+            const subject = document.getElementById("subject").value;
+            const className = document.getElementById("class").value;
+            const day = document.getElementById("day").value;
+            const time = document.getElementById("time").value;
+            const room = document.getElementById("room").value;
+            const selamat = document.getElementById("selamat").value;
+            const periode = document.getElementById("periode").value;
+            const pertemuan = document.getElementById("pertemuan").value;
+
+            if (name === "" || day === "" || time === "" || room === "" || subject === "" || lecturer === "" || className === "" || selamat === "" || periode === "" || pertemuan === "") {
+                swal("Gagal!", "Mohon lengkapi semua kolom!", "error");
+                return;
+            }
+
+            const announcement = `
+                Assalammualaikum warahmatullahi wabarakatuh,<br>
+                ${selamat}, ${lecturer}.<br><br>
+                Mohon maaf mengganggu waktunya, semoga dalam keadaan sehat walafiat.<br><br>
+                Perkenalkan saya ${name}, Asisten Laboratorium yang akan bertugas untuk mengasistensi ${lecturer} selama di laboratorium.<br>
+                Saya bermaksud memberitahukan bahwa bapak mendapatkan jadwal penggunaan laboratorium untuk semester ini pada ${periode}, berikut lampirannya:<br><br>
+                <ul>
+                    <li><strong>*📚Mata Kuliah:*</strong> ${subject}</li>
+                    <li><strong>*🧑‍🎓Kelas:*</strong> ${className}</li>
+                    <li><strong>*📅Hari:*</strong> ${day}</li>
+                    <li><strong>*🕒Jam:*</strong> ${time}</li>
+                    <li><strong>*🏫Ruang:*</strong> ${room}</li>
+                </ul>
+                <br />
+                Sesuai arahan kaprodi, penggunaan labolatorium dimulai pada ${pertemuan} pembelajaran dan diharapkan bapak untuk dapat mengisi ruang laboratorium pada jadwal yang telah ditentukan.<br>
+                Terima kasih. <br />
+                ${selamat},
+                Wasalammualaikum warahmatullahi wabarakatuh.
+            `;
+            displayAnnouncement(announcement);
+        }
+
+
+        document.getElementById("copyBtn").addEventListener("click", function() {
+            const text = document.getElementById("announcementText").innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                swal("Berhasil!", "Pengumuman telah disalin ke clipboard!", "success", {
+                    button: false,
+                    timer: 2000
+                });
+            }).catch(function() {
+                swal("Gagal!", "Tidak bisa menyalin ke clipboard!", "error");
+            });
+        });
+
+        function displayAnnouncement(announcement) {
+            document.getElementById("announcementText").innerHTML = announcement;
+            document.getElementById("output").style.display = "block";
+        }
+    </script>
+<footer class="text-center mt-5">
+    <p class="mb-3">&copy; 2024 Made with ❤️ by <a href="https://instagram.com/indradwi.25" target="_blank">Indra Dwi A</a> (Asisten Lab) All rights reserved.</p>
+    <hr>
+    <p class="mb-3">Follow us on social media (Asisten Lab):</p>
+    <div class="social-icons">
+        <a href="https://www.youtube.com/channel/UCA54H_WP5NyKMxJVnTlcQsA/" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/aslabti_unpam/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+</body>
+</html>
