@@ -289,7 +289,11 @@
 
             <div class="d-flex justify-content-between">
                 <button type="button" class="btn btn-primary" onclick="generateStudentAnnouncement()">Buat untuk Mahasiswa </button>
+                <br />
+                <br />
                 <button type="button" class="btn btn-primary" onclick="generateLecturerAnnouncement()">Buat untuk Dosen </button>
+                <br />
+                <br />
                 <button type="reset" class="btn btn-secondary">Reset</button>
             </div>
         </form>
@@ -364,9 +368,26 @@
                     <li><strong>*🧑‍🎓 Kelas:*</strong> ${className}</li>
                 </ul>
                 <hr>
-                <p><strong>*Catatan penting:*</strong> Wajib memakai almamater dan membawa laptop karena di lab komputer hanya disediakan terminal saja.</p>
-                <br />
-                *Pastikan untuk hadir tepat waktu* dan mempersiapkan diri dengan baik. Terima kasih!
+                <p><strong>*Catatan penting:*</strong><br />
+                ✅ Wajib memakai almamater.<br />
+                ✅ Wajib membawa laptop masing-masing, karena komputer di lab terbatas.<br /><br />
+
+                ❌ Dilarang membawa makanan dan minuman ke dalam lab (kecuali botol/tumbler).<br />
+                ❌ Dilarang membawa, memindahkan, mengubah, atau merusak fasilitas yang ada di lab.<br />
+                ❌ Dilarang melakukan aktivitas yang tidak berhubungan dengan praktikum di dalam lab.<br /><br />
+
+                📌 Pastikan untuk menjaga kebersihan dan kerapian area kerja di laboratorium. Setelah selesai, rapikan kembali kursi dan meja sesuai posisi semula.<br />
+                📌 Matikan komputer jika sudah selesai atau tidak digunakan lagi untuk menghemat energi.<br />
+                📌 Setiap mahasiswa bertanggung jawab atas peralatan yang digunakan selama praktikum.<br />
+                📌 Jangan tinggalkan barang pribadi di laboratorium setelah praktikum selesai.<br />
+                📌 Hindari membuat keributan agar tidak mengganggu pengguna laboratorium lainnya.<br /><br />
+
+                ⏱ Pastikan hadir tepat waktu dan mempersiapkan diri dengan baik.<br />
+                ⏰ Toleransi keterlambatan masuk lab adalah 15 menit atau sesuai kebijakan dosen (opsional).<br /><br />
+
+                *Pastikan untuk hadir tepat waktu* dan mempersiapkan diri dengan baik. Terima kasih atas perhatiannya, dan sampai jumpa di lab!
+</p>
+
             `;
 
             displayAnnouncement(announcement);
@@ -398,7 +419,7 @@
                 ${selamat}, ${lecturer}.<br><br>
                 Mohon maaf mengganggu waktunya, semoga dalam keadaan sehat walafiat.<br><br>
                 Perkenalkan saya ${name}, Asisten Laboratorium yang akan bertugas untuk mengasistensi ${lecturer} selama di laboratorium.<br>
-                Saya bermaksud memberitahukan bahwa bapak mendapatkan jadwal penggunaan laboratorium untuk semester ini pada ${periode}, berikut lampirannya:<br><br>
+                Saya bermaksud memberitahukan bahwa ${lecturer} mendapatkan jadwal penggunaan laboratorium untuk semester ini pada ${periode}, berikut lampirannya:<br><br>
                 <ul>
                     <li><strong>*📚Mata Kuliah:*</strong> ${subject}</li>
                     <li><strong>*🧑‍🎓Kelas:*</strong> ${className}</li>
@@ -407,7 +428,7 @@
                     <li><strong>*🏫Ruang:*</strong> ${room}</li>
                 </ul>
                 <br />
-                Sesuai arahan kaprodi, penggunaan labolatorium dimulai pada ${pertemuan} pembelajaran dan diharapkan bapak untuk dapat mengisi ruang laboratorium pada jadwal yang telah ditentukan.<br>
+                Sesuai arahan kaprodi, penggunaan labolatorium dimulai pada ${pertemuan} pembelajaran dan diharapkan ${lecturer} untuk dapat mengisi ruang laboratorium pada jadwal yang telah ditentukan.<br>
                 Terima kasih. <br />
                 ${selamat},
                 Wasalammualaikum warahmatullahi wabarakatuh.
