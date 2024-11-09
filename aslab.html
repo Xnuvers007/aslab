@@ -132,6 +132,7 @@
         }
         .social-icons {
         margin: 20px 0;
+        gap: 15px;
     }
     
     /* .social-icons a {
@@ -148,7 +149,7 @@
         text-decoration: none;
     } */
 
-    .social-icons a {
+    /* .social-icons a {
             width: 35px;
             height: 35px;
             background-color: #ffffff;
@@ -159,7 +160,23 @@
             color: #000;
             transition: all 0.3s ease;
             text-decoration: none;
-        }
+        } */
+
+        .social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Increased width */
+    height: 50px; /* Increased height */
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 0 10px;
+    color: inherit;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.5rem; /* Adjust icon size as needed */
+}
     
     .social-icons a:hover {
         transform: translateY(-3px);
@@ -453,15 +470,43 @@
             document.getElementById("announcementText").innerHTML = announcement;
             document.getElementById("output").style.display = "block";
         }
+
     </script>
 <footer class="text-center mt-5">
     <p class="mb-3">&copy; 2024 Made with ❤️ by <a href="https://instagram.com/indradwi.25" target="_blank">Indra Dwi A</a> (Asisten Lab) All rights reserved.</p>
     <hr>
     <p class="mb-3">Follow us on social media (Asisten Lab):</p>
     <div class="social-icons">
-        <a href="https://www.youtube.com/channel/UCA54H_WP5NyKMxJVnTlcQsA/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/aslabti_unpam/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a id="youtube" href="#" target="_blank" title="YouTube" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a id="instagram" href="#" target="_blank" title="Instagram" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
     </div>
+    <script>
+        const p = {
+            youtube: "aHR0cHM6Ly93d3cueW91dHViZS5jb20vY2hhbm5lbC9VQ0E1NEhfV1A1TnlLTXhKVm5UbGNRc0Ev",
+            instagram: "aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9hc2xhYnRpX3VucGFtLw=="
+        };
+
+        function decodeBase64(base64Str) {
+            try {
+                return atob(base64Str);
+            } catch (e) {
+                console.error('Invalid Base64 string', e);
+                return '#';
+            }
+        }
+
+        function applyLinks() {
+            document.getElementById('youtube').href = decodeBase64(p.youtube);
+            document.getElementById('instagram').href = decodeBase64(p.instagram);
+        }
+
+        window.onload = applyLinks;
+
+    </script>
 </footer>
 </body>
 </html>
